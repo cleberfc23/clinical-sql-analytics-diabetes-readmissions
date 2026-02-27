@@ -65,7 +65,7 @@ Poor glycemic control is associated with worse hospital outcomes and higher read
 
 Detailed analytical results available in:
 
-**[View Clinical Findings Report](/reports/findings.md)**
+**[View Clinical Findings Report for Baseline v1.0](/reports/findings.md)**
 ---
 
 ## Skills Demonstrated
