@@ -1,58 +1,93 @@
 # Clinical SQL Analytics: Diabetes Hospital Readmissions
 ![Status](https://img.shields.io/badge/status-in%20progress-yellow)
 
-This repository contains a SQL focused analytical project exploring hospital readmissions among patients with diabetes using a relational SQLite database.
+This project explores hospital readmission patterns among diabetic patients using SQL driven analytics and an end to end clinical data workflow.
 
-The objective of this project is to apply structured SQL queries and relational modeling techniques to a real world healthcare dataset, demonstrating practical data analysis skills in a reproducible and well documented format.
-
----
-
-## 🩺 Problem Context
-
-Hospital readmissions in patients with diabetes represent a major clinical and economic challenge.  
-Understanding patterns related to patient demographics, diagnoses, and hospitalization characteristics can help identify potential risk factors associated with readmission.
-
-This project investigates these patterns using SQL as the primary analytical tool.
+The objective is to demonstrate how structured healthcare data can be transformed into interpretable insights using relational databases, analytical SQL queries, and automated visualization.
 
 ---
 
 ## Dataset
 
-Source: Diabetes 130 US hospitals for years 1999 to 2008  
-Provider: UCI Machine Learning Repository  
-Link: https://archive.ics.uci.edu/dataset/296/diabetes+130-us+hospitals+for+years+1999-2008  
-Records: Approximately 100,000 hospital encounters  
+Diabetes 130 US Hospitals Dataset  
+https://archive.ics.uci.edu/dataset/296/diabetes+130-us+hospitals+for+years+1999-2008
 
-The dataset is deidentified and widely used for academic research in healthcare analytics.
-
----
-
-## Project Goals
-
-- Design a clean and readable relational schema in SQLite  
-- Perform structured SQL based exploratory analysis  
-- Apply data quality validation checks  
-- Extract clinically meaningful insights from structured data  
+- ~101k hospital encounters
+- ~71k patients
+- Real world clinical records
+- Publicly available healthcare dataset
 
 ---
 
-## Status
+## Project Workflow
 
-This project is currently under development.  
-Implementation of the database schema, data loading process, and analytical queries will be progressively added.
+CSV Clinical Data  
+→ SQLite Relational Database  
+→ SQL Analytical Queries  
+→ Python Integration  
+→ Interactive Visual Analytics
 
+---
+
+## Key Analytical Insights
+
+### Readmission Rate by Age Group
+
+Older patient groups present progressively higher hospital readmission rates.
+
+![Readmission by Age](/reports/readmission_age.png)
+
+---
+
+### Clinical Complexity and Readmission Risk
+
+Patients with higher diagnostic burden show significantly increased readmission probability.
+
+![Risk Groups](/reports/readmission_clinical_risk_group.png)
+
+---
+
+### Glycemic Control Impact
+
+Poor glycemic control is associated with worse hospital outcomes and higher readmission rates.
+
+![Glycemic Control](/reports/readmission_rate_glycemic_control.png)
+
+---
+
+## Baseline Results
+
+| Metric | Value |
+|---|---|
+| Hospital encounters | 101,766 |
+| Unique patients | 71,518 |
+| Global readmission rate | 46% |
+
+Detailed analytical results available in:
+
+**[View Clinical Findings Report](/reports/findings.md)**
 ---
 
 ## Skills Demonstrated
 
-- SQL for data analysis  
-- Relational database design  
-- Healthcare data exploration  
-- Analytical reasoning applied to real world datasets  
+- SQL analytics
+- Relational database modeling
+- Healthcare data analysis
+- ETL pipeline design
+- Python SQL integration
+- Interactive visualization with Plotly
+
+---
+
+## Project Status
+
+Baseline analytical version completed.
+
+Future iterations will include data quality validation, feature engineering, and predictive modeling of hospital readmissions.
 
 ---
 
 ## Disclaimer
 
-This repository is intended for research and demonstration purposes only.  
-All data is publicly available.
+This project is intended for engineering and research-analytical purposes only.  
+All data is publicly available and de identified.
