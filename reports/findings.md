@@ -42,7 +42,7 @@ Older patient groups present progressively higher hospital readmission rates.
 
 Patients with higher diagnostic burden show significantly increased readmission probability.
 
-![Risk Groups](reports/risk_groups.png)
+![Risk Groups](reports/readmission_clinical_risk_group.png)
 
 ---
 
@@ -50,7 +50,7 @@ Patients with higher diagnostic burden show significantly increased readmission 
 
 Poor glycemic control is associated with worse hospital outcomes and higher readmission rates.
 
-![Glycemic Control](reports/glycemic_control.png)
+![Glycemic Control](reports/readmission_rate_glycemic_control.png)
 
 ---
 
