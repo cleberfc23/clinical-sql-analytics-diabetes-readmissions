@@ -1,5 +1,6 @@
 # Clinical SQL Analytics: Diabetes Hospital Readmissions
-![Status](https://img.shields.io/badge/status-in%20progress-yellow)
+![Status](https://img.shields.io/badge/status-MVP-yellow?style=for-the-badge)
+![Status](https://img.shields.io/badge/status-active%20development-yellow?style=for-the-badge)
 
 This project explores hospital readmission patterns among diabetic patients using SQL driven analytics and an end to end clinical data workflow.
 
