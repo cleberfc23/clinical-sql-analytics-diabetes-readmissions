@@ -13,3 +13,14 @@ JOIN patients p
 ON p.patient_nbr = e.patient_nbr
 GROUP BY p.age
 ORDER BY p.age;
+
+-- 3. Readmitted Encounters by Age Group
+SELECT
+    p.age,
+    SUM(CASE WHEN readmitted <> 'NO' THEN 1 ELSE 0 END)
+    as readmitted_encounters_by_age
+FROM encounters e
+JOIN patients p
+ON e.patient_nbr = p.patient_nbr
+GROUP BY p.age
+ORDER By p.age;
