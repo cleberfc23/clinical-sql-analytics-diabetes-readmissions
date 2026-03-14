@@ -36,3 +36,14 @@ ON p.patient_nbr = e.patient_nbr
 GROUP BY p.age
 ORDER BY p.age;
 
+-- 5. Readmission Rate by Gender by Descending order
+SELECT
+    p.gender,
+    COUNT(*) AS encounters,
+    ROUND(100.0*SUM(CASE WHEN readmitted <> 'NO' THEN 1 ELSE 0 END)/COUNT(*),1)
+    AS readmission_rate_pct
+FROM encounters e
+JOIN patients p
+ON p.patient_nbr = e.patient_nbr
+GROUP BY p.gender
+ORDER BY readmission_rate_pct DESC;
