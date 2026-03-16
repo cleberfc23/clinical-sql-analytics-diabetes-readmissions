@@ -47,3 +47,14 @@ JOIN patients p
 ON p.patient_nbr = e.patient_nbr
 GROUP BY p.gender
 ORDER BY readmission_rate_pct DESC;
+
+
+-- 6. Average Length of Stay by Readmission Status
+SELECT
+    readmitted,
+    ROUND(AVG(time_in_hospital),2) AS avg_time
+FROM encounters
+GROUP BY readmitted
+ORDER BY readmitted;
+
+
