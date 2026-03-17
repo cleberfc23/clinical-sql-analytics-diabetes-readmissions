@@ -57,4 +57,14 @@ FROM encounters
 GROUP BY readmitted
 ORDER BY readmitted;
 
+-- 7. Top primary Diagnoses
+SELECT
+    diag_code,
+    COUNT(*) AS total_cases
+FROM diagnoses
+WHERE diag_rank = 1
+GROUP BY diag_code
+ORDER BY total_cases DESC
+LIMIT 10;
+
 
