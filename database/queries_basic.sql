@@ -67,4 +67,16 @@ GROUP BY diag_code
 ORDER BY total_cases DESC
 LIMIT 10;
 
+-- 8. Top 10 Medical Specialties by Number of Hospital Encounters
+SELECT  
+    medical_specialty,
+    COUNT(*) AS total_encounters
+FROM encounters
+WHERE medical_specialty IS NOT NULL
+    AND medical_specialty <> ''
+    AND medical_specialty <> '?'
+GROUP BY medical_specialty
+ORDER BY total_encounters DESC
+LIMIT 10;
+
 
