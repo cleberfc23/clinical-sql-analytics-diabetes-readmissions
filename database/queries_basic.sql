@@ -67,7 +67,7 @@ GROUP BY diag_code
 ORDER BY total_cases DESC
 LIMIT 10;
 
--- 8. Top 10 Medical Specialties by Number of Hospital Encounters
+-- 8. Top 10 clerMedical Specialties by Number of Hospital Encounters
 SELECT  
     medical_specialty,
     COUNT(*) AS total_encounters
@@ -79,4 +79,17 @@ GROUP BY medical_specialty
 ORDER BY total_encounters DESC
 LIMIT 10;
 
+-- 9. Top Diagnoses Among Readmitted Patients
+
+SELECT 
+    d.diag_code,
+    COUNT(*) AS total_cases
+FROM encounters e
+JOIN diagnoses d
+ON e.encounter_id = d.encounter_id
+WHERE d.diag_rank = 1
+AND e.readmitted <> 'NO'
+GROUP BY d.diag_code
+ORDER BY total_cases DESC
+LIMIT 10;
 
