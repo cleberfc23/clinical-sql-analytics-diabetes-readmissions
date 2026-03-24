@@ -67,7 +67,7 @@ GROUP BY diag_code
 ORDER BY total_cases DESC
 LIMIT 10;
 
--- 8. Top 10 clerMedical Specialties by Number of Hospital Encounters
+-- 8. Top 10 Medical Specialties by Number of Hospital Encounters
 SELECT  
     medical_specialty,
     COUNT(*) AS total_encounters
@@ -93,3 +93,19 @@ GROUP BY d.diag_code
 ORDER BY total_cases DESC
 LIMIT 10;
 
+-- 10. Readmission Rate by Primary Diagnosis
+
+SELECT
+    d.diag_code,
+    d.diag_rank,
+    COUNT(*) AS total_cases,
+    SUM(CASE WHEN readmitted <> 'NO' THEN 1 ELSE 0 END) AS readmitted_cases,
+    ROUND(100.0*SUM(CASE WHEN readmitted <> 'NO' THEN 1 ELSE 0 END)/ COUNT(*),1)
+    AS readmission_rate
+FROM encounters e
+JOIN diagnoses d
+ON e.encounter_id = d.encounter_id
+WHERE diag_rank = 1
+GROUP BY d.diag_code
+ORDER BY total_cases DESC
+LIMIT 10;
