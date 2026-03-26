@@ -124,3 +124,20 @@ HAVING COUNT(*) > 30
 ORDER BY readmission_rate DESC
 LIMIT 10
 ;
+
+-- 12. High-risk patient profiles
+SELECT
+    d.diag_code,
+    p.age,
+    COUNT(*) AS total_cases,
+    SUM(CASE WHEN readmitted <> 'NO' THEN 1 ELSE 0 END) AS readmitted_cases,
+    ROUND(100.0*SUM(CASE WHEN readmitted <> 'NO' THEN 1 ELSe 0 END)/COUNT(*),1) AS readmitted_rate
+FROM encounters e
+JOIN patients p ON e.patient_nbr = p.patient_nbr
+JOIN diagnoses d ON e.encounter_id = d.encounter_id
+WHERE d.diag_rank = 1
+GROUP BY d.diag_code, p.age
+HAVING COUNT(*) > 30
+ORDER BY total_cases DESC
+LIMIT 10
+;
