@@ -1,6 +1,8 @@
 # Clinical SQL Analytics — Diabetes Hospital Readmissions
 
 ![Status](https://img.shields.io/badge/status-baseline%20complete-blue?style=for-the-badge)
+![Status](https://img.shields.io/badge/development-paused-607d8b?style=for-the-badge)
+
 
 SQL-driven analytics pipeline for hospital readmission patterns in diabetic patients.
 Covers relational data modeling, ETL, analytical queries, and interactive visualization
